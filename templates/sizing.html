@@ -1,0 +1,64 @@
+{% extends 'base.html'%}{% block head%}
+<li class="nav-item ">
+    <a class="nav-link" href="{{url_for('index')}}">Home<span class="badge badge-success">6</span></a>
+</li>
+
+<li class="nav-item ">
+    <a class="nav-link active" href="{{url_for('sizing')}}">Sizing of Apps <span class="badge badge-success">6</span></a>
+</li>
+
+<li class="nav-item ">
+    <a class="nav-link" href="{{url_for('pricing')}}">Pricing of Apps<span class="badge badge-success">6</span></a>
+</li>
+
+<li class="nav-item ">
+    <a class="nav-link" href="{{url_for('relations')}}">Some Relations <span class="badge badge-success">6</span></a>
+</li>
+
+<li class="nav-item ">
+    <a class="nav-link" href="{{url_for('review')}}">Reviews <span class="badge badge-success">6</span></a>
+</li>
+<style>
+    body {
+        font: 20px sans-serif;
+    }
+
+    .axis path,
+    .axis line {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges;
+    }
+
+    .dot {
+        stroke: #000;
+    }
+</style>
+{% endblock %}
+{% block body %}
+
+            <h2 class="pageheader-title">Sizing of Apps</h2>
+        </div>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-6 col-sm-12 col-12">
+            <div class="card">
+                <h3 class="card-header">Size vs Rating</h3>
+                <div class="card-body p-0">
+                    <div id = "sizing"></div>
+                </div>
+                <h4 class="text-primary">The above chart shows that apps with sizes between 2 MB and 40 MB are the best rated.</h4>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-6 col-sm-12 col-12">
+        <div class="card">
+            <div class="card-body p-0">
+                <div>
+
+<script src="{{ url_for('static', filename = 'libs/js/size_vs_rating.js')}}"></script>
+
+
+{% endblock%}

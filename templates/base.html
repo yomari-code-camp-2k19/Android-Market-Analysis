@@ -1,0 +1,111 @@
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename = "vendor/bootstrap/css/bootstrap.min.css")}}">
+    <link href="{{ url_for('static', filename = 'vendor/fonts/circular-std/style.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'libs/css/style.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'vendor/fonts/fontawesome/css/fontawesome-all.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'vendor/fonts/flag-icon-css/flag-icon.min.css')}}">
+    <title>Android Market Analysis</title>
+
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0)
+    transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;
+    text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;
+    text-align: left;}
+    </style>
+
+    <style>
+            #chartdiv {
+              width: 100%;
+              height: 500px
+            }
+            
+            </style>
+    <style>
+        .pie {
+  margin: 20px;
+}
+
+svg {
+    float: left;
+}
+
+.legend {
+  float: left;
+  font-family: "Verdana";
+  font-size: .7em;
+}
+
+.pie text {
+  font-family: "Verdana";
+  fill: #000;
+}
+
+.pie .name-text{
+  font-size: .8em;
+}
+
+.pie .value-text{
+  font-size: 3em;
+}
+    </style>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+
+<body>
+    <div class="dashboard-main-wrapper">
+        <div class="dashboard-header">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                <a class="navbar-brand" href="{{url_for('index')}}">Android Market Analysis</a>
+            </nav>
+        </div>
+        <div class="nav-left-sidebar sidebar-dark">
+            <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;"><div class="menu-list" style="overflow: hidden; width: auto; height: 100%;">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-divider">
+                                Menu
+                            </li>
+                            {% block head %}
+                            {% endblock %}
+                        </ul>
+                    </div>
+                </nav>
+            </div><div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 243.783px;"></div>
+            <div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+        </div>
+        <div class="dashboard-wrapper">
+            <div class="dashboard-ecommerce">
+                <div class="container-fluid dashboard-content ">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="page-header">
+
+                                {% block body%}
+                                {% endblock %}
+                            </div>
+                                </div>
+                                </div>
+                            </div>
+            <footer>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                             Copyright © Team Strikers
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

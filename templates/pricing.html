@@ -1,0 +1,59 @@
+{% extends 'base.html'%}
+{% block head%}
+<li class="nav-item ">
+    <a class="nav-link" href="{{url_for('index')}}">Home<span class="badge badge-success">6</span></a>
+</li>
+
+<li class="nav-item ">
+    <a class="nav-link" href="{{url_for('sizing')}}">Sizing of Apps <span class="badge badge-success">6</span></a>
+</li>
+
+<li class="nav-item ">
+    <a class="nav-link active" href="{{url_for('pricing')}}">Pricing of Apps<span class="badge badge-success">6</span></a>
+</li>
+
+<li class="nav-item ">
+    <a class="nav-link" href="{{url_for('relations')}}">Some Relations <span class="badge badge-success">6</span></a>
+</li>
+
+<li class="nav-item ">
+    <a class="nav-link" href="{{url_for('review')}}">Reviews <span class="badge badge-success">6</span></a>
+</li>
+{% endblock %}
+{% block body %}
+            <h2 class="pageheader-title">Pricing</h2>
+
+        </div>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card">
+                <h3 class="card-header">Pricing according to Category</h3>
+                <div class="card-body p-0">
+                    <div>
+                        <img src="{{ url_for('static', filename = 'images/price_according_category.png' )}}"
+                        alt="price_according_category"
+                        >
+										</div>
+								</div>
+						</div>
+				</div>
+
+
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card">
+                <h3 class="card-header">Pricing Strategy</h3>
+                <div class="card-body p-0">
+                    <div>
+                        <img src="{{ url_for('static', filename = 'images/price_strategy.png' )}}"
+                        alt="price_strategy"
+                        >
+										</div>
+								</div>
+						</div>
+				</div>
+
+
+		</div>
+{% endblock%}

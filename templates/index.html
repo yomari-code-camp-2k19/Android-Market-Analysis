@@ -1,0 +1,111 @@
+{% extends 'base.html'%}
+
+{% block head%}
+
+<li class="nav-item ">
+    <a class="nav-link active" href="{{url_for('index')}}">Home<span class="badge badge-success">6</span></a>
+</li>
+
+<li class="nav-item ">
+    <a class="nav-link" href="{{url_for('sizing')}}">Sizing of Apps <span class="badge badge-success">6</span></a>
+</li>
+
+<li class="nav-item ">
+    <a class="nav-link" href="{{url_for('pricing')}}">Pricing of Apps<span class="badge badge-success">6</span></a>
+</li>
+
+<li class="nav-item ">
+    <a class="nav-link" href="{{url_for('relations')}}">Some Relations <span class="badge badge-success">6</span></a>
+</li>
+
+<li class="nav-item ">
+    <a class="nav-link" href="{{url_for('review')}}">Reviews <span class="badge badge-success">6</span></a>
+</li>
+<style>
+  .axis path,
+ .axis line {
+   fill: none;
+   stroke: black;
+   shape-rendering: crispEdges;
+ }
+ .axis text {
+   font-family: sans-serif;
+   font-size: 11px;
+ }
+   </style>
+    <style>
+        .pie {
+            margin: 20px;
+        }
+
+        svg {
+            float: left;
+        }
+
+        .legend {
+            float: left;
+            font-family: "Verdana";
+            font-size: .7em;
+        }
+
+        .pie text {
+            font-family: "Verdana";
+            fill: #000;
+        }
+
+        .pie .name-text {
+            font-size: .8em;
+        }
+
+        .pie .value-text {
+            font-size: 3em;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+
+            <h2 class="pageheader-title">Home</h2>
+        </div>
+    </div>
+</div>
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card">
+                <h3 class="card-header"> Android Market Overview</h3>
+                <div class="card-body p-0">
+                        <h4 class="text-primary">The following chart shows the relation between downloads, reviews and ratings of individual categories.</h4>
+                        <div id="chartdiv"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card">
+                <h3 class="card-header"> Average Rating </h3>
+                <div class="card-body">
+                <div id='average-layout'>
+
+                </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12 col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="mb-0"> Apps in various categories</h3>
+                </div>
+
+
+                    <div>
+                    <div>
+
+                        <div id="chart"></div>
+
+<script src="{{ url_for('static', filename ='libs/js/average_rating.js' )}}"></script>
+<script src="{{ url_for('static', filename = 'libs/js/index.js')}}"></script>
+<script src="{{ url_for('static', filename = 'libs/js/download_reviews.js')}}"></script>
+{% endblock%}
